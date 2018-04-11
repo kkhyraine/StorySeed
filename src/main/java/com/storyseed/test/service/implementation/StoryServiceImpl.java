@@ -23,7 +23,7 @@ public class StoryServiceImpl implements StoryService{
 
     @Override
     public Story findOne(Long storyId) {
-        return storyRepository.findOne(storyId);
+        return null;
     }
 
     @Override
