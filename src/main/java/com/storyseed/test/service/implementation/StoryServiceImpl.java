@@ -4,12 +4,14 @@ import com.storyseed.test.model.Story;
 import com.storyseed.test.repository.StoryRepository;
 import com.storyseed.test.service.StoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by Nick on 10/04/2018.
  */
+@Service("storyService")
 public class StoryServiceImpl implements StoryService{
 
     private StoryRepository storyRepository;
@@ -20,22 +22,22 @@ public class StoryServiceImpl implements StoryService{
     }
 
     @Override
-    public Story findOne(Long id) {
-        return storyRepository.findOne(id);
+    public Story findOne(Long storyId) {
+        return storyRepository.findOne(storyId);
     }
 
     @Override
     public List<Story> findAll() {
-        return null;
+        return storyRepository.findAll();
     }
 
     @Override
     public Story add(Story story) {
-        return null;
+        return storyRepository.save(story);
     }
 
     @Override
     public void delete(Story story) {
-
+        storyRepository.delete(story);
     }
 }

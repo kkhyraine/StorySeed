@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface StoryService {
 
-    Story findOne(Long id);
+    Story findOne(Long storyId);
 
     List<Story> findAll();
 
